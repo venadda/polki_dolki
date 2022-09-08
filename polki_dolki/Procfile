@@ -1,1 +1,2 @@
-"web:python manage.py runserver 0.0.0.0:\$PORT"
+web:gunicorn polki_dolki.wsgi
+web:python manage.py runserver 0.0.0.0:\$PORT"
