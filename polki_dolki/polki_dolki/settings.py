@@ -135,10 +135,12 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+STATICFILES_DIRS = (os.path.join(PROJECT_DIR, 'static'),)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = (os.path.join(BASE_DIR, 'media'),)
-STATIC_ROOT = (os.path.join(BASE_DIR, 'static'),)
+MEDIA_ROOT = (os.path.join(PROJECT_DIR, 'media'),)
+STATIC_ROOT = (os.path.join(PROJECT_DIR, 'static'),)
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
