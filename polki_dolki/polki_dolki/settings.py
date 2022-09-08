@@ -1,7 +1,7 @@
 
 from pathlib import Path
 import os
-#import django-heroku
+import django-heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-@k$=k*bci(^soy&=lrwm#l3m3nahr+eql+zxy48)(38jculxry
 DEBUG = False
 
 #ALLOWED_HOSTS = ["https://polki-dolki.herokuapp.com/",'localhost','127.0.0.1' ]
-ALLOWED_HOSTS = [ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']]
+ALLOWED_HOSTS =  ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -153,4 +153,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
