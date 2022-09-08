@@ -1,1 +1,1 @@
-web: gunicorn polki_dolki.wsgi
+web: gunicorn polki_dolki.wsgi --log-file
