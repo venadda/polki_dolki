@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-@k$=k*bci(^soy&=lrwm#l3m3nahr+eql+zxy48)(38jculxry
 DEBUG = False
 
 #ALLOWED_HOSTS = ["https://polki-dolki.herokuapp.com/",'localhost','127.0.0.1' ]
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']]
 
 
 # Application definition
@@ -33,13 +33,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'bootstrap4',
     'business.apps.BusinessConfig',
-
+	'whitenoise.runserver_nostatic',
 ]
 #'materializecssform',
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware'
+    'django.contrib.messages.middleware.MessageMiddleware',
+'whitenoise.middleware.WhiteNoiseMiddleware',
 )
 #'fontawesomefree'
 MIDDLEWARE = [
@@ -53,7 +54,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'polki_dolki.urls'
-
+WHITENOISE_USE_FINDERS = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -148,6 +149,7 @@ LOGOUT_URL = 'logout'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 print(STATICFILES_DIRS)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
