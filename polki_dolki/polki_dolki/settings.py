@@ -33,14 +33,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'bootstrap4',
     'business.apps.BusinessConfig',
-	'whitenoise.runserver_nostatic',
+	#'whitenoise.runserver_nostatic',
 ]
 #'materializecssform',
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-'whitenoise.middleware.WhiteNoiseMiddleware',
+#'whitenoise.middleware.WhiteNoiseMiddleware',
 )
 #'fontawesomefree'
 MIDDLEWARE = [
@@ -149,7 +149,7 @@ LOGOUT_URL = 'logout'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 print(STATICFILES_DIRS)
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
